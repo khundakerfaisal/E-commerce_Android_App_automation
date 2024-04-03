@@ -1,3 +1,5 @@
+package config;
+
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
@@ -8,7 +10,7 @@ import java.net.URL;
 import java.time.Duration;
 
 public class setup {
-    AndroidDriver driver;
+    public AndroidDriver driver;
     @BeforeTest
     public AndroidDriver setup() throws MalformedURLException {
         DesiredCapabilities caps =new DesiredCapabilities();
@@ -25,6 +27,6 @@ public class setup {
     }
     @AfterTest
     public void closeApp(){
-        driver.quit();
+//        driver.quit();
     }
 }

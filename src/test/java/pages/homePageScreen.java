@@ -1,3 +1,6 @@
+package pages;
+
+import Utils.Utils;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.Point;
@@ -19,20 +22,22 @@ public class homePageScreen {
     @FindBy(className = "android.widget.ImageView")
     List<WebElement> btnProductIcon;
 
-    @FindBy(id = "com.nopstation.nopcommerce.nopstationcart:id/ivProductThumb")
-    List<WebElement> btnProductSubItem;
-
+    @FindBy(xpath = "(//android.widget.ImageView[@content-desc=\"Placeholder\"])[6]")
+    WebElement btnProductSubItem;
+    public AndroidDriver driver;
 
     public homePageScreen(AndroidDriver driver) {
+        this.driver=driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
     public void selectProduct() throws InterruptedException {
         btnAcceptAgreement.click();
         Thread.sleep(5000);
-        btnProductIcon.get(1).click();
-
+        Utils.scroll(driver,482,1306,490,709);
         btnProductSubItem.click();
+
+//        btnProductSubItem.click();
 
         Thread.sleep(3000);
 
