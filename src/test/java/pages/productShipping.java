@@ -60,8 +60,17 @@ public class productShipping {
     WebElement btnShipmentContinue;
 
 
+    @FindBy(className = "android.widget.RelativeLayout")
+    List<WebElement> paymentTypeSelection;
 
+    @FindBy(id = "com.nopstation.nopcommerce.nopstationcart:id/btnContinue")
+    WebElement btnPaymentTypeSelection;
 
+    @FindBy(className = "android.widget.Button")
+    List<WebElement> btnNextButton;
+
+    @FindBy(id="com.nopstation.nopcommerce.nopstationcart:id/btnContinue")
+    WebElement btnConfirmButton;
     public AndroidDriver driver;
 
     public productShipping(AndroidDriver driver){
@@ -110,5 +119,24 @@ public class productShipping {
 
         btnShipmentContinue.click();
         Thread.sleep(3000);
+
+        paymentTypeSelection.get(5).click();
+        Thread.sleep(3000);
+        Utils.scroll(driver,482,1548,508,488);
+        Thread.sleep(3000);
+        Utils.scroll(driver,473,1613,511,435);
+        Thread.sleep(3000);
+        Utils.scroll(driver,529,1569,564,502);
+        Thread.sleep(3000);
+        Utils.scroll(driver,529,1569,564,502);
+        Thread.sleep(3000);
+        btnPaymentTypeSelection.click();
+        Thread.sleep(3000);
+        btnNextButton.get(0).click();
+        Thread.sleep(4000);
+        Utils.scroll(driver,447,1483,470,441);
+        Thread.sleep(3000);
+        btnConfirmButton.click();
+
     }
 }
