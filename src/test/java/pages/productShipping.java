@@ -78,7 +78,7 @@ public class productShipping {
         PageFactory.initElements(new AppiumFieldDecorator(driver),this);
     }
 
-    public void prodcutSelection() throws InterruptedException {
+    public void productSelection() throws InterruptedException {
         btnAddToCart.click();
         Thread.sleep(2000);
         btnProductChoose.click();

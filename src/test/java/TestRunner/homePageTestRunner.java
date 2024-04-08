@@ -15,6 +15,7 @@ public class homePageTestRunner extends setup {
     @Test(priority = 2,description = "Final product selection")
     public void finalProductChoose() throws InterruptedException {
         productShipping productShipping=new productShipping(driver);
-        productShipping.prodcutSelection();
+        productShipping.productSelection();
+        System.out.println("Product Shipment successfully");
     }
 }

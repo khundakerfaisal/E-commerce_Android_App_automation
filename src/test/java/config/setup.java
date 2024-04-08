@@ -18,11 +18,11 @@ public class setup {
         caps.setCapability("platformVersion","11");
         caps.setCapability("appPackage","com.nopstation.nopcommerce.nopstationcart");
         caps.setCapability("appActivity","com.bs.ecommerce.main.SplashScreenActivity");
-        caps.setCapability("app","H:\\\\apk\\\\ecom.apk");
+        caps.setCapability("app","H:\\apk\\ecom.apk");
         caps.setCapability("automationName","UiAutomator2");
         URL url= new URL("http://127.0.0.1:4723");
         driver=new AndroidDriver(url,caps);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         return driver;
     }
     @AfterTest
